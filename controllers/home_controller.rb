@@ -6,7 +6,7 @@ module SinIo
       erb :index, locals: {
 				script: js_bundle,
         css: css_bundle,
-        page_name: "index",
+        page_name: "home#index",
 			}
     end
 

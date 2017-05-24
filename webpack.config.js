@@ -15,6 +15,7 @@ module.exports = function webpackStuff(env) {
   return {
     entry: [
       './front_end/src/index.js',
+      './front_end/src/home/index.js',
       './front_end/styles/app.css',
     ],
     output: {
