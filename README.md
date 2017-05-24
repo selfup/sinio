@@ -1,6 +1,6 @@
 # Sinatra GPIO API (sinio)
 
-Must run on: Raspberry Pi 2 B+
+Must run on: Raspberry Pi 2 B or newer
 
 Default is direction out on pin 17 only. You can mess around with the config :tada:
 
