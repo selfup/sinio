@@ -12,10 +12,10 @@ module SinIo
         :allow_methods => [:put]
 
       bool_key = {
-        "true"=> true,
-        true=> true,
-        "false"=> false,
-        false=> false,
+        "true" => true,
+        true => true,
+        "false" => false,
+        false => false,
       }
 
       request.params.each do |k, v|
@@ -32,5 +32,6 @@ module SinIo
       content_type :json
       AppPins.to_json
     end
-	end
+  end
 end
+
