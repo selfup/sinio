@@ -6,13 +6,15 @@ Default is direction out on pin 17 only. You can mess around with the config :ta
 
 **To be used as an internal node. Another application on the RPI should talk to this :smile:**
 
-**rbenv sudo**
+### Fire up
+
+**rbenv sudo** [rbenv sudo](https://github.com/dcarley/rbenv-sudo)
 
 `rbenv sudo bundle exec rackup`
 
-**rvm sudo**
+**rvmsudo** [rvmsudo](https://rvm.io/integration/sudo)
 
-`rvm sudo bundle exec rackup`
+`rvmsudo bundle exec rackup`
 
 ### Options
 
