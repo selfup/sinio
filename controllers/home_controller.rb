@@ -8,7 +8,7 @@ module SinIo
     end
 
     put "/pins" do
-      cross_origin :allow_origin => 'http://example.com',
+      cross_origin :allow_origin => '*',
         :allow_methods => [:put]
 
       bool_key = {
