@@ -1,8 +1,8 @@
 # Sinatra GPIO API (sinio)
 
 Must run on: Raspberry Pi 2 B+
-Default is direction out on pin 17 only. You can mess around with the config :smile:
 
+Default is direction out on pin 17 only. You can mess around with the config :smile:
 
 **rbenv sudo**
 
