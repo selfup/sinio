@@ -4,7 +4,7 @@ Must run on: Raspberry Pi 2 B+
 
 Default is direction out on pin 17 only. You can mess around with the config :smile:
 
-**To be used as an internal node. Another application on the RPI should talk to this :smile"**
+**To be used as an internal node. Another application on the RPI should talk to this :smile:**
 
 **rbenv sudo**
 
