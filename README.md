@@ -27,7 +27,7 @@ Default is direction out on pin 17 only. You can mess around with the config :ta
 
 ### Api
 
-*GET (fetch pin state)*
+**GET (fetch pin state)**
 
 If set on `0.0.0.0` and port `8080` and the raspberry pi is on `10.0.0.23` (for example)
 
@@ -35,12 +35,12 @@ GET -> 10.0.0.23:8080/pins
 
 ***
 
-*PUT (update the pin/s)*
+**PUT (update the pin/s)**
 
 PUT -> ip:port/pins?17=true
 
-This will turn on GPIO 17
+*This will turn on GPIO 17*
 
 PUT -> ip:port/pins?17=false
 
-This will turn it off
+*This will turn off GPIO 17*
