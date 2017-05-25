@@ -23,7 +23,8 @@ Default is direction out on pin 17 only. You can mess around with the config :ta
 * to run as daemon: `bundle exec rackup -D` (you can also use screen or tmux and detach instead of `-D`)
 
 * to set all three (ip, port, daemon): `bundle exec rackup --host 0.0.0.0 -p 8080 -D`
-  * **don't forget to use rbenv or rvm sudo!**
+
+*don't forget to use rbenv/rvm sudo!*
 
 ### Api
 
