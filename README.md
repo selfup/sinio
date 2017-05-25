@@ -35,7 +35,7 @@ GET -> 10.0.0.23:8080/pins
 
 ***
 
-**PUT (update the pin/s)**
+**PUT (update the pin(s))**
 
 PUT -> ip:port/pins?17=true
 
