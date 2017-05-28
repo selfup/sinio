@@ -7,10 +7,8 @@ module SinIo
       AppPins.to_json
     end
 
-    put "/pins" do
-      cross_origin :allow_origin => '*',
-        :allow_methods => [:put]
-
+    ## not RESTful but makes life easy :)
+    get "/set" do
       bool_key = {
         "true" => true,
         true => true,
@@ -21,10 +19,10 @@ module SinIo
       request.params.each do |k, v|
         value = bool_key[v]
         if value
-          GpioPins[k.to_i].on
+          RPI ? GpioPins[k.to_i].on : nil
           AppPins[k] = value
         else
-          GpioPins[k.to_i].off
+          RPI ? GpioPins[k.to_i].off : nil
           AppPins[k] = value
         end
       end

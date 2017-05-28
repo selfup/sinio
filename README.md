@@ -4,17 +4,47 @@ Must run on: Raspberry Pi 2 B or newer
 
 Default is direction out on pin 17 only. You can mess around with the config :tada:
 
-**To be used as an internal node. Another application on the RPI should talk to this :smile:**
+To be used as an internal node. Another application on the RPI should talk to this!
 
-### Fire up
+Have another app serve the api/webpage from the same raspberry pi and have it proxy via internal api calls.
+
+*Because* we must use **sudo** to run this GPIO Server, it is best to have it as extracted as possible (micro/pico service).
+
+### Requirements
+
+**An up to date raspberry pi** To be sure, run `sudo apt-get update -y`
+
+**ruby 2.3.0** *or greater* installed via `rbenv` or `rvm` on the raspberry pi
+
+--
 
 **rbenv sudo** [rbenv sudo](https://github.com/dcarley/rbenv-sudo)
 
-`rbenv sudo bundle exec rackup`
+OR
 
 **rvmsudo** [rvmsudo](https://rvm.io/integration/sudo)
 
-`rvmsudo bundle exec rackup`
+--
+
+### Scripts (rpi only)
+
+There is a production script that will run the app on `localhost:9292`
+
+Run it like so: `./scripts/production.sh`
+
+It will *run the app as a daemon* and set the RPI=true ENV VAR for you
+
+--
+
+There is a dev script that will not run as a daemon
+
+It will run on the same host/port as the above script
+
+Run it like so: `./scripts/rpi_dev.sh`
+
+--
+
+*these scripts assume you are using `rbenv sudo` you may change them to use `rvmsudo` :rocket:*
 
 ### Options
 
@@ -24,7 +54,7 @@ Default is direction out on pin 17 only. You can mess around with the config :ta
 
 * to set all three (ip, port, daemon): `bundle exec rackup --host 0.0.0.0 -p 8080 -D`
 
-*don't forget to use rbenv/rvm sudo!*
+**don't forget to use rbenv/rvm sudo!** ex: `rbenv sudo bundle exec rackup`
 
 ### Api
 
@@ -32,14 +62,12 @@ Default is direction out on pin 17 only. You can mess around with the config :ta
 
 GET -> `/pins`
 
-***
+**GET (update pin state)**
 
-**PUT (update the pin(s))**
-
-PUT -> `/pins?17=true`
+GET -> `/set?17=true`
 
 *This will turn on GPIO 17*
 
-PUT -> `/pins?17=false`
+GET -> `/set?17=false`
 
 *This will turn off GPIO 17*

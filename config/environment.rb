@@ -2,7 +2,6 @@
 require "bundler"
 require "json"
 require "pi_piper"
-require "sinatra/cross_origin"
 
 Bundler.require
 
@@ -16,15 +15,42 @@ Dir[APP_ROOT.join("controllers", "*.rb")]
 
 # configure Server settings
 module SinIo
-  AppPins = {17 => false}
+  json_config = File.read(APP_ROOT.join("config", "gpio_config.json"))
+  parsed_config = JSON.parse(json_config)
+
+  ## global pin state
+  Directions = Hash[
+    parsed_config["directions"]
+      .map { |k, v| k.to_i }
+      .zip(parsed_config["directions"].values)
+    ]
+
+  AppPins = Hash[
+    parsed_config["pins"]
+      .map { |k, v| k.to_i }
+      .zip(parsed_config["pins"].values)
+    ]
+
+  RPI = parsed_config["rpi"]
   GpioPins = {}
 
-  AppPins.each do |pin, v|
-    GpioPins[pin] = PiPiper::Pin.new(pin: pin, direction: :out)
+  # if RPI is given to be true the GPIO code will run
+  if RPI
+    puts "CONNECTING TO GPIO PINS"
+    AppPins.each do |pin, v|
+      GpioPins[pin] = PiPiper::Pin.new(
+        pin: pin,
+        direction: Directions[pin].to_sym
+       )
+    end
+
+    AppPins.each do |pin, state|
+      state ? GpioPins[pin].on : GpioPins[pin].off
+    end
+    puts "CONNECTED"
   end
 
   class Server < Sinatra::Base
-    register Sinatra::CrossOrigin
     set :method_override, true
     set :root, APP_ROOT.to_path
   end
