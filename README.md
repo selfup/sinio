@@ -8,8 +8,6 @@ To be used as an internal node. Another application on the RPI should talk to th
 
 If you need a frontend, have another app serve the api/webpage from the same raspberry pi and have it proxy.
 
-This will ensure there will be no CORS issues. 
-
 Because we must use **sudo** to run this GPIO Server, it is best to have it as extracted as possible (micro/pico service).
 
 ### Requirements
