@@ -32,20 +32,20 @@ module SinIo
   # they can be via rvmsudo but this is to differentiate
   # between RPI or non RPI machine
   RPI = ENV['RPI'].is_a?(String) ? false : parsed_config['rpi']
-  @gpio_pins = {}
+  GPIO_PINS = {}
 
   # if RPI is given to be true the GPIO code will run
   if RPI
     puts 'CONNECTING TO GPIO PINS'
     AppPins.each do |pin, _v|
-      @gpio_pins[pin] = PiPiper::Pin.new(
+      GPIO_PINS[pin] = PiPiper::Pin.new(
         pin: pin,
         direction: Directions[pin].to_sym
       )
     end
 
     AppPins.each do |pin, state|
-      state ? @gpio_pins[pin].on : @gpio_pins[pin].off
+      state ? GPIO_PINS[pin].on : GPIO_PINS[pin].off
     end
     puts 'CONNECTED - SERVER IS RUNNING'
   end

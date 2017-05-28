@@ -17,9 +17,9 @@ module SinIo
       request.params.each do |k, v|
         value = bool_key[v]
         if value
-          RPI ? @gpio_pins[k.to_i].on : nil
+          RPI ? GPIO_PINS[k.to_i].on : nil
         else
-          RPI ? @gpio_pins[k.to_i].off : nil
+          RPI ? GPIO_PINS[k.to_i].off : nil
         end
         AppPins[k] = value
       end

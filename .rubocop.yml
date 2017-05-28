@@ -3,3 +3,6 @@ Documentation:
 
 Layout/MultilineMethodCallIndentation:
   EnforcedStyle: indented
+
+MutableConstant:
+  Enabled: false
