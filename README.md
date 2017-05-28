@@ -30,7 +30,7 @@ Run it like so: `./scripts/production.sh`
 
 It will *run the app as a daemon* and set the RPI=true ENV VAR for you
 
----------------------------------------------------------------------------------------------------
+--
 
 There is a dev script that will not run as a daemon
 
@@ -38,7 +38,7 @@ It will run on the same host/port as the above script
 
 Run it like so: `./scripts/rpi_dev.sh`
 
----------------------------------------------------------------------------------------------------
+--
 
 *these scripts assume you are using `rbenv sudo` you may change them to use `rvmsudo` :rocket:*
 
@@ -50,17 +50,13 @@ Run it like so: `./scripts/rpi_dev.sh`
 
 * to set all three (ip, port, daemon): `bundle exec rackup --host 0.0.0.0 -p 8080 -D`
 
-*don't forget to use rbenv/rvm sudo!* ex: `rbenv sudo bundle exec rackup`
-
-***
+**don't forget to use rbenv/rvm sudo!** ex: `rbenv sudo bundle exec rackup`
 
 ### Api
 
 **GET (fetch pin state)**
 
 GET -> `/pins`
-
-***
 
 **GET (update pin state)**
 
