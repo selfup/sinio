@@ -14,7 +14,7 @@ Have another app serve the api/webpage from the same raspberry pi and have it pr
 
 **An up to date raspberry pi** To be sure, run `sudo apt-get update -y`
 
-**ruby 2.3.0** *or greater* installed via `rbenv` or `rvm` on the raspberry pi
+**ruby 2.3.4** *or greater* installed via `rbenv` or `rvm` on the raspberry pi
 
 --
 
