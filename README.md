@@ -18,11 +18,9 @@ I use ruby 2.4.0, up to you!
 
 **rbenv sudo** [rbenv sudo](https://github.com/dcarley/rbenv-sudo)
 
-`rbenv sudo bundle exec rackup`
+OR
 
 **rvmsudo** [rvmsudo](https://rvm.io/integration/sudo)
-
-`rvmsudo bundle exec rackup`
 
 ### Scripts (rpi only)
 
@@ -52,7 +50,7 @@ Run it like so: `./scripts/rpi_dev.sh`
 
 * to set all three (ip, port, daemon): `bundle exec rackup --host 0.0.0.0 -p 8080 -D`
 
-*don't forget to use rbenv/rvm sudo!*
+*don't forget to use rbenv/rvm sudo!* ex: `rbenv sudo bundle exec rackup`
 
 ***
 
