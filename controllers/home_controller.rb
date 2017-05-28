@@ -2,7 +2,7 @@ module SinIo
   class Server < Sinatra::Base
     get '/pins' do
       content_type :json
-      AppPins.to_json
+      APP_PINS.to_json
     end
 
     ## not RESTful but makes life easy :)
@@ -21,10 +21,10 @@ module SinIo
         else
           RPI ? GPIO_PINS[k.to_i].off : nil
         end
-        AppPins[k] = value
+        APP_PINS[k] = value
       end
       content_type :json
-      AppPins.to_json
+      APP_PINS.to_json
     end
   end
 end

@@ -23,7 +23,7 @@ module SinIo
     .zip(parsed_config['directions'].values)
   ]
 
-  AppPins = Hash[parsed_config['pins']
+  APP_PINS = Hash[parsed_config['pins']
     .map { |k, _v| k.to_i }
     .zip(parsed_config['pins'].values)
   ]
@@ -37,14 +37,14 @@ module SinIo
   # if RPI is given to be true the GPIO code will run
   if RPI
     puts 'CONNECTING TO GPIO PINS'
-    AppPins.each do |pin, _v|
+    APP_PINS.each do |pin, _v|
       GPIO_PINS[pin] = PiPiper::Pin.new(
         pin: pin,
         direction: Directions[pin].to_sym
       )
     end
 
-    AppPins.each do |pin, state|
+    APP_PINS.each do |pin, state|
       state ? GPIO_PINS[pin].on : GPIO_PINS[pin].off
     end
     puts 'CONNECTED - SERVER IS RUNNING'
