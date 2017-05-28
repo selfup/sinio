@@ -16,7 +16,7 @@ Default is direction out on pin 17 only. You can mess around with the config :ta
 
 `rvmsudo bundle exec rackup`
 
-### Scripts
+### Scripts (rpi only)
 
 There is a production script that will run the app on `localhost:9292`
 
