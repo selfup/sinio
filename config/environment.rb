@@ -19,12 +19,24 @@ module SinIo
   parsed_config = JSON.parse(json_config)
 
   ## global pin state
-  Directions = parsed_config["directions"]
-  AppPins = parsed_config["pins"]
+  Directions = Hash[
+    parsed_config["directions"]
+      .map { |k, v| k.to_i }
+      .zip(parsed_config["directions"].values)
+    ]
+
+  AppPins = Hash[
+    parsed_config["pins"]
+      .map { |k, v| k.to_i }
+      .zip(parsed_config["pins"].values)
+    ]
+
+  RPI = parsed_config["rpi"]
   GpioPins = {}
 
-  # if a RPI ENV VAR is given to be true this code will run
-  if ENV["RPI"] == ["true"]
+  # if RPI is given to be true the GPIO code will run
+  if RPI
+    puts "CONNECTING TO GPIO PINS"
     AppPins.each do |pin, v|
       GpioPins[pin] = PiPiper::Pin.new(
         pin: pin,
@@ -35,6 +47,7 @@ module SinIo
     AppPins.each do |pin, state|
       state ? GpioPins[pin].on : GpioPins[pin].off
     end
+    puts "CONNECTED"
   end
 
   class Server < Sinatra::Base

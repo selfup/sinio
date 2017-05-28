@@ -4,5 +4,6 @@
   },
   "directions": {
     "17": "out"
-  }
+  },
+  "rpi": true
 }

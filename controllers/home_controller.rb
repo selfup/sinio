@@ -19,10 +19,10 @@ module SinIo
       request.params.each do |k, v|
         value = bool_key[v]
         if value
-          ENV["RPI"] == "true" ? GpioPins[k.to_i].on : nil
+          RPI ? GpioPins[k.to_i].on : nil
           AppPins[k] = value
         else
-          ENV["RPI"] == "true" ? GpioPins[k.to_i].off : nil
+          RPI ? GpioPins[k.to_i].off : nil
           AppPins[k] = value
         end
       end

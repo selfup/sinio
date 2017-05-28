@@ -1,1 +1,1 @@
-bundle && RPI=true rbenv sudo -E bundle exec rackup -D
+bundle && rbenv sudo bundle exec rackup -D
