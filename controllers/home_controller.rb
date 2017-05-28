@@ -1,5 +1,3 @@
-require 'pry'
-
 module SinIo
   class Server < Sinatra::Base
     get "/pins" do
@@ -32,4 +30,3 @@ module SinIo
     end
   end
 end
-

@@ -1,4 +1,3 @@
-# require your gems
 require "bundler"
 require "json"
 require "pi_piper"
