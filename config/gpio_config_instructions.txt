@@ -1,0 +1,9 @@
+JSON is simple. There is already a standard config for 1 pin.
+
+Pin 17 with a default value of ffalse (off) and power directed out.
+
+This server uses the `pi_piper` gem, so if you want to learn more, go check it out!
+
+Otherwise, to add more pins and related directions, just add more info to the gpio_config.json file :)
+
+All pins must have default state and direction!!!
