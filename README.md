@@ -4,11 +4,11 @@ Must run on: Raspberry Pi 2 B or newer
 
 Default is direction out on pin 17 only. You can mess around with the config :tada:
 
-To be used as an internal node. Another application on the RPI should talk to this :smile:
+To be used as an internal node. Another application on the RPI should talk to this!
 
-If you need a frontend, have another app serve the api/webpage from the same raspberry pi and have it proxy.
+Have another app serve the api/webpage from the same raspberry pi and have it proxy via internal api calls.
 
-Because we must use **sudo** to run this GPIO Server, it is best to have it as extracted as possible (micro/pico service).
+*Because* we must use **sudo** to run this GPIO Server, it is best to have it as extracted as possible (micro/pico service).
 
 ### Requirements
 
