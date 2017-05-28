@@ -47,6 +47,7 @@ PLATFORMS
 DEPENDENCIES
   pi_piper
   pry
+  rake
   rubocop (~> 0.49.0)
   sinatra
 
