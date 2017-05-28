@@ -1,30 +1,28 @@
 module SinIo
   class Server < Sinatra::Base
-    get "/pins" do
+    get '/pins' do
       content_type :json
       AppPins.to_json
     end
 
     ## not RESTful but makes life easy :)
-    get "/set" do
+    get '/set' do
       bool_key = {
-        "true" => true,
+        'true' => true,
         true => true,
-        "false" => false,
-        false => false,
+        'false' => false,
+        false => false
       }
 
       request.params.each do |k, v|
         value = bool_key[v]
         if value
-          RPI ? GpioPins[k.to_i].on : nil
-          AppPins[k] = value
+          RPI ? GPIO_PINS[k.to_i].on : nil
         else
-          RPI ? GpioPins[k.to_i].off : nil
-          AppPins[k] = value
+          RPI ? GPIO_PINS[k.to_i].off : nil
         end
+        AppPins[k] = value
       end
-      
       content_type :json
       AppPins.to_json
     end

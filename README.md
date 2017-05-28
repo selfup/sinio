@@ -14,7 +14,7 @@ Have another app serve the api/webpage from the same raspberry pi and have it pr
 
 **An up to date raspberry pi** To be sure, run `sudo apt-get update -y`
 
-**ruby 2.3.0** *or greater* installed via `rbenv` or `rvm` on the raspberry pi
+**ruby 2.3.4** *or greater* installed via `rbenv` or `rvm` on the raspberry pi
 
 --
 
@@ -40,7 +40,7 @@ There is a dev script that will not run as a daemon
 
 It will run on the same host/port as the above script
 
-Run it like so: `./scripts/rpi_dev.sh`
+Run it like so: `./scripts/development.sh`
 
 --
 
