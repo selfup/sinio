@@ -2,7 +2,7 @@
 
 `"rpi": true` is the default setting. 
 
-**If not on a raspberry pi**, set this to `false`.
+**If not on a raspberry pi**, run `bundle exec rake non_pi` instead of the shell scripts
 
 *Otherwise things will not work. App will crash :P*
 

@@ -40,7 +40,7 @@ There is a dev script that will not run as a daemon
 
 It will run on the same host/port as the above script
 
-Run it like so: `./scripts/rpi_dev.sh`
+Run it like so: `./scripts/development.sh`
 
 --
 

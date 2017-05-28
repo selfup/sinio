@@ -28,7 +28,10 @@ module SinIo
     .zip(parsed_config['pins'].values)
   ]
 
-  RPI = parsed_config['rpi']
+  # ENV vars cannot be passed through rbenv sudo
+  # they can be via rvmsudo but this is to differentiate
+  # between RPI or non RPI machine
+  RPI = ENV['RPI'].is_a?(String) ? false : parsed_config['rpi']
   @gpio_pins = {}
 
   # if RPI is given to be true the GPIO code will run
