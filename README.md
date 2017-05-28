@@ -16,6 +16,18 @@ Default is direction out on pin 17 only. You can mess around with the config :ta
 
 `rvmsudo bundle exec rackup`
 
+***
+
+**scripts**
+
+There is a production script that will run the app on `localhost:9292`
+
+Run it like so: `./scripts/production.sh`
+
+It will *run the app as a daemon* and set the RPI=true ENV VAR for you
+
+*this script assumes you are using `rbenv sudo` you may change it to use `rvmsudo` :rocket:*
+
 ### Options
 
 * to set base ip: `bundle exec rackup --host 0.0.0.0`
@@ -26,6 +38,8 @@ Default is direction out on pin 17 only. You can mess around with the config :ta
 
 *don't forget to use rbenv/rvm sudo!*
 
+***
+
 ### Api
 
 **GET (fetch pin state)**
@@ -34,12 +48,12 @@ GET -> `/pins`
 
 ***
 
-**PUT (update the pin(s))**
+**GET (update pin state)**
 
-PUT -> `/pins?17=true`
+GET -> `/set?17=true`
 
 *This will turn on GPIO 17*
 
-PUT -> `/pins?17=false`
+GET -> `/set?17=false`
 
 *This will turn off GPIO 17*

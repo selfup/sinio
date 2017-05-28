@@ -2,7 +2,6 @@
 require "bundler"
 require "json"
 require "pi_piper"
-require "sinatra/cross_origin"
 
 Bundler.require
 
@@ -16,15 +15,18 @@ Dir[APP_ROOT.join("controllers", "*.rb")]
 
 # configure Server settings
 module SinIo
+  ## global pin state
   AppPins = {17 => false}
   GpioPins = {}
 
-  AppPins.each do |pin, v|
-    GpioPins[pin] = PiPiper::Pin.new(pin: pin, direction: :out)
+  # if a RPI ENV VAR is given to be true this code will run
+  if ENV["RPI"] == ["true"]
+    AppPins.each do |pin, v|
+      GpioPins[pin] = PiPiper::Pin.new(pin: pin, direction: :out)
+    end
   end
 
   class Server < Sinatra::Base
-    register Sinatra::CrossOrigin
     set :method_override, true
     set :root, APP_ROOT.to_path
   end
