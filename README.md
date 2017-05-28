@@ -4,7 +4,11 @@ Must run on: Raspberry Pi 2 B or newer
 
 Default is direction out on pin 17 only. You can mess around with the config :tada:
 
-**To be used as an internal node. Another application on the RPI should talk to this :smile:**
+To be used as an internal node. Another application on the RPI should talk to this :smile:
+
+If you need a frontend, have another app serve the frontend api/webpage and have it proxy.
+
+This will ensure there will be no CORS issues, and because we must use **sudo** to run this GPIO Server, it is best to have it as extracted as possible.
 
 ### Requirements
 
