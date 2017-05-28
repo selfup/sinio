@@ -26,7 +26,7 @@ It will *run the app as a daemon* and set the RPI=true ENV VAR for you
 
 ---------------------------------------------------------------------------------------------------
 
-There is a dev script for the **raspberry pi** so you can poke around.
+There is a dev script that will not run as a daemon.
 
 Run it like so: `./scripts/rpi_dev.sh`
 
