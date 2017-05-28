@@ -8,19 +8,19 @@ Default is direction out on pin 17 only. You can mess around with the config :ta
 
 ### Requirements
 
-An up to date raspberry pi. To be sure, run `sudo apt-get update -y`
-
-*no guarantees! I made sure to use the least amount of deps other than ruby and rbenv/rvm sudo*
+**An up to date raspberry pi** To be sure, run `sudo apt-get update -y`
 
 **ruby 2.3.0** *or greater* installed via `rbenv` or `rvm` on the raspberry pi
 
-I use ruby 2.4.0, up to you!
+--
 
 **rbenv sudo** [rbenv sudo](https://github.com/dcarley/rbenv-sudo)
 
 OR
 
 **rvmsudo** [rvmsudo](https://rvm.io/integration/sudo)
+
+--
 
 ### Scripts (rpi only)
 
