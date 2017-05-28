@@ -16,9 +16,7 @@ Default is direction out on pin 17 only. You can mess around with the config :ta
 
 `rvmsudo bundle exec rackup`
 
-***
-
-**scripts**
+### Scripts
 
 There is a production script that will run the app on `localhost:9292`
 
@@ -26,7 +24,15 @@ Run it like so: `./scripts/production.sh`
 
 It will *run the app as a daemon* and set the RPI=true ENV VAR for you
 
-*this script assumes you are using `rbenv sudo` you may change it to use `rvmsudo` :rocket:*
+---------------------------------------------------------------------------------------------------
+
+There is a dev script for the **raspberry pi** so you can poke around.
+
+Run it like so: `./scripts/rpi_dev.sh`
+
+---------------------------------------------------------------------------------------------------
+
+*these scripts assume you are using `rbenv sudo` you may change them to use `rvmsudo` :rocket:*
 
 ### Options
 
