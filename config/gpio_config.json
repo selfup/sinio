@@ -1,0 +1,9 @@
+{
+  "pins": {
+    "17": false
+  },
+  "directions": {
+    "17": "out"
+  },
+  "rpi": true
+}

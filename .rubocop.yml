@@ -1,0 +1,8 @@
+Documentation:
+  Enabled: false
+
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+
+MutableConstant:
+  Enabled: false
